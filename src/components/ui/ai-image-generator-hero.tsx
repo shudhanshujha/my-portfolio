@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect, useRef, useMemo } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { cn } from "../../lib/utils"
 import { SmokeBackground } from "./spooky-smoke-animation"
@@ -16,7 +16,6 @@ interface ImageCard {
 
 interface ImageCarouselHeroProps {
   title: React.ReactNode
-  subtitle: string
   description: string
   ctaText: string
   onCtaClick?: () => void
@@ -49,7 +48,6 @@ function useWindowSize() {
 
 export function ImageCarouselHero({
   title,
-  subtitle,
   description,
   ctaText,
   onCtaClick,

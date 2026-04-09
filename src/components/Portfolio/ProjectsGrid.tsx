@@ -132,7 +132,7 @@ export const ProjectsGrid = () => {
                   </p>
                   
                   <div className="mt-6 flex items-center justify-between">
-                    <span className={`text-[10px] uppercase tracking-widest font-accent ${project.glow === 'pink' ? 'text-primary' : project.glow === 'gold' ? 'text-gold' : 'text-blue'}`}>
+                    <span className={`text-[10px] uppercase tracking-widest font-accent ${project.glow === 'gold' ? 'text-gold' : 'text-blue'}`}>
                       {project.glow} Showcase
                     </span>
                     <a

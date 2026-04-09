@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import { ImageCarouselHero } from "../ui/ai-image-generator-hero";
 
 export const GradientNav = () => {
@@ -62,7 +61,6 @@ export const Hero = () => {
             </span>
           </>
         }
-        subtitle="KloutKrew Portfolio"
         description="We build bespoke, high-conversion web experiences for luxury brands and industry leaders. Elevate your digital presence with award-winning design and flawless execution."
         ctaText="Start Your Project"
         onCtaClick={() => (document.getElementById('contact-modal') as HTMLDialogElement)?.showModal()}
