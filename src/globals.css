@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 11 11 11;
+  --primary: 330 100% 75%; /* #f7a1c6 */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white selection:bg-primary selection:text-black;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-accent {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-colors;
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
