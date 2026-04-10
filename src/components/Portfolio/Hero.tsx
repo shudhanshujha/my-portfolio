@@ -1,6 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
 import { ImageCarouselHero } from "../ui/ai-image-generator-hero";
+import { Sparkles } from "lucide-react";
+
+export const HeroBanner = () => {
+  return (
+    <div className="relative w-full overflow-hidden bg-gold py-2">
+      <motion.div
+        animate={{ x: [0, -1000] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        className="flex whitespace-nowrap"
+      >
+        {[...Array(10)].map((_, i) => (
+          <div key={i} className="flex items-center gap-8 px-4">
+            <span className="text-[10px] font-accent font-bold uppercase tracking-[0.2em] text-black">
+              ✦ Award-Winning Digital Agency ✦ Now Accepting Q3 Projects ✦ Luxury Brand Engineering
+            </span>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
 export const GradientNav = () => {
   return (
@@ -17,7 +38,7 @@ export const GradientNav = () => {
         </div>
       </a>
       <div className="hidden space-x-12 md:flex">
-        {["Expertise", "Work", "Testimonials"].map((item) => (
+        {["Expertise", "Process", "Work", "Testimonials"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -49,37 +70,90 @@ const PROJECT_IMAGES = [
   { id: "8", src: "/projects/pagani.png", alt: "Pagani Zonda R", rotation: 0 },
 ];
 
+export const HeroIntro = () => (
+  <section className="relative pt-40 pb-10 bg-background overflow-hidden">
+    <div className="container mx-auto px-6 max-w-7xl text-center relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mb-8 inline-flex items-center gap-3 rounded-full border border-gold/20 bg-gold/5 px-6 py-3"
+      >
+        <Sparkles className="h-4 w-4 text-gold" />
+        <span className="text-xs font-accent font-bold uppercase tracking-[0.2em] text-gold">
+          Engineering the Extraordinary
+        </span>
+      </motion.div>
+      
+      <motion.h1 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="font-serif text-6xl sm:text-8xl md:text-[10rem] text-white leading-[0.85] tracking-tighter"
+      >
+        Digital <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold italic font-light">
+          Ascendance.
+        </span>
+      </motion.h1>
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-8"
+      >
+        <div className="h-[1px] w-20 bg-gradient-to-r from-transparent to-white/20 hidden sm:block" />
+        <p className="max-w-md text-sm sm:text-lg text-white/40 font-light leading-relaxed uppercase tracking-widest">
+          Where Technical Mastery Meets Absolute Artistic Vision.
+        </p>
+        <div className="h-[1px] w-20 bg-gradient-to-l from-transparent to-white/20 hidden sm:block" />
+      </motion.div>
+    </div>
+    
+    {/* Background Elements */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0 pointer-events-none">
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue/5 rounded-full blur-[120px] animate-pulse" />
+    </div>
+  </section>
+);
+
 export const Hero = () => {
   return (
-    <section className="relative w-full overflow-hidden bg-background">
-      <ImageCarouselHero
-        title={
-          <>
-            Digital Excellence, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold italic font-light">
-              Engineered.
-            </span>
-          </>
-        }
-        description="We build bespoke, high-conversion web experiences for luxury brands and industry leaders. Elevate your digital presence with award-winning design and flawless execution."
-        ctaText="Start Your Project"
-        onCtaClick={() => (document.getElementById('contact-modal') as HTMLDialogElement)?.showModal()}
-        images={PROJECT_IMAGES}
-        features={[
-          {
-            title: "Luxurious Design",
-            description: "Crafting digital experiences that command attention and define your brand.",
-          },
-          {
-            title: "Flawless Execution",
-            description: "Pixel-perfect performance and smooth interactions across all digital touchpoints.",
-          },
-          {
-            title: "High Conversion",
-            description: "Strategic engineering that turns visitors into loyal customers and clients.",
-          },
-        ]}
-      />
-    </section>
+    <div className="bg-background">
+      <HeroBanner />
+      <HeroIntro />
+      <section className="relative w-full overflow-hidden bg-background">
+        <ImageCarouselHero
+          title={
+            <>
+              Immersive <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-200 to-gold italic font-light">
+                Experiences.
+              </span>
+            </>
+          }
+          description="We build bespoke, high-conversion web experiences for luxury brands and industry leaders. Elevate your digital presence with award-winning design and flawless execution."
+          ctaText="Start Your Project"
+          onCtaClick={() => (document.getElementById('contact-modal') as HTMLDialogElement)?.showModal()}
+          images={PROJECT_IMAGES}
+          features={[
+            {
+              title: "Luxurious Design",
+              description: "Crafting digital experiences that command attention and define your brand.",
+            },
+            {
+              title: "Flawless Execution",
+              description: "Pixel-perfect performance and smooth interactions across all digital touchpoints.",
+            },
+            {
+              title: "High Conversion",
+              description: "Strategic engineering that turns visitors into loyal customers and clients.",
+            },
+          ]}
+        />
+      </section>
+    </div>
   );
 };

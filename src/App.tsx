@@ -8,6 +8,8 @@ import { BrandsMarquee } from './components/Portfolio/BrandsMarquee';
 import { Testimonials } from './components/Portfolio/Testimonials';
 import { ProjectsGrid } from './components/Portfolio/ProjectsGrid';
 import { About } from './components/Portfolio/About';
+import { Process } from './components/Portfolio/Process';
+import { Services } from './components/Portfolio/Services';
 import { ContactModal } from './components/Portfolio/ContactModal';
 import { Footer } from './components/Portfolio/Footer';
 
@@ -44,6 +46,8 @@ function App() {
       <Hero />
       <BrandsMarquee />
       <About />
+      <Services />
+      <Process />
       <ProjectsGrid />
       <Testimonials />
       <ContactModal />
