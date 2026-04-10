@@ -61,8 +61,8 @@ export const About = () => {
             <div className="relative aspect-[4/5] w-full max-w-md rounded-3xl overflow-hidden group">
                <div className="absolute inset-0 bg-gradient-to-br from-gold/20 via-transparent to-transparent z-10 opacity-40 group-hover:opacity-60 transition-opacity duration-700" />
                <img 
-                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop" 
-                 alt="Future Tech" 
+                 src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=800&auto=format&fit=crop" 
+                 alt="Innovative Technology" 
                  className="h-full w-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-1000 scale-110 group-hover:scale-100"
                />
                

@@ -3,9 +3,9 @@
 import type React from "react"
 import { useState, useEffect, useRef, useMemo } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
 import { cn } from "../../lib/utils"
 import { SmokeBackground } from "./spooky-smoke-animation"
+import StarButton from "./star-button"
 
 interface ImageCard {
   id: string
@@ -86,15 +86,15 @@ export function ImageCarouselHero({
   }
 
   const radius = useMemo(() => {
-    if (width < 640) return 140;
-    if (width < 1024) return 220;
-    return 350;
+    if (width < 640) return 180;
+    if (width < 1024) return 280;
+    return 450; // Increased size to fill space
   }, [width]);
 
   const cardSize = useMemo(() => {
-    if (width < 640) return { w: 140, h: 90 };
-    if (width < 1024) return { w: 220, h: 140 };
-    return { w: 320, h: 200 };
+    if (width < 640) return { w: 180, h: 120 };
+    if (width < 1024) return { w: 280, h: 180 };
+    return { w: 420, h: 260 }; // Increased size
   }, [width]);
 
   return (
@@ -109,7 +109,7 @@ export function ImageCarouselHero({
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-7xl px-4 mx-auto">
         {/* Carousel Container */}
         <div
-          className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] mb-8 lg:mb-12 touch-none"
+          className="relative w-full h-[400px] sm:h-[500px] lg:h-[650px] mb-8 lg:mb-12 touch-none flex items-center justify-center"
           onMouseMove={handleMouseMove}
         >
           <div className="absolute inset-0 flex items-center justify-center" style={{ perspective: '2000px' }}>
@@ -160,7 +160,7 @@ export function ImageCarouselHero({
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-500" />
                     
                     <div className="absolute bottom-2 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0 transform">
-                        <p className="text-[8px] sm:text-[10px] uppercase tracking-[0.2em] text-gold font-bold truncate">{image.alt}</p>
+                        <p className="text-[10px] sm:text-[12px] uppercase tracking-[0.2em] text-gold font-bold truncate">{image.alt}</p>
                     </div>
                   </div>
                 </div>
@@ -185,18 +185,10 @@ export function ImageCarouselHero({
             {description}
           </p>
 
-          <button
+          <StarButton
+            text={ctaText}
             onClick={onCtaClick}
-            className={cn(
-              "group relative inline-flex items-center gap-3 px-8 py-4 sm:px-10 sm:py-5 rounded-full overflow-hidden",
-              "bg-gold text-black font-bold uppercase tracking-widest text-xs sm:text-sm transition-all hover:scale-105 active:scale-95"
-            )}
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              {ctaText} <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </span>
-            <div className="absolute inset-0 bg-white translate-y-[100%] transition-transform duration-300 group-hover:translate-y-0" />
-          </button>
+          />
         </motion.div>
 
         {/* Features Section */}

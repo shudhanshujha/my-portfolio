@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { X, Send, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
+import { X, Send, Mail, Phone, ArrowRight } from "lucide-react";
 
 export const ContactModal = () => {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -26,24 +26,36 @@ export const ContactModal = () => {
   return (
     <>
       <section id="contact" className="relative bg-background py-32 px-4 md:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(212,175,55,0.05)_0%,rgba(0,0,0,0)_70%)]" />
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="h-full w-full object-cover opacity-30 grayscale brightness-50"
+          >
+            <source src="/bg-elevate.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background" />
+        </div>
         
         <div className="container mx-auto max-w-5xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl border border-white/5 bg-white/[0.02] p-12 md:p-24 backdrop-blur-3xl"
+            className="rounded-3xl border border-white/5 bg-white/[0.02] p-12 md:p-24 backdrop-blur-md overflow-hidden relative"
           >
-            <h2 className="font-serif text-5xl text-white md:text-7xl mb-6">
+            <h2 className="font-serif text-5xl text-white md:text-7xl mb-6 relative z-10">
               Ready to <span className="text-gold italic font-light">Elevate?</span>
             </h2>
-            <p className="mx-auto max-w-2xl font-sans text-lg text-white/50 font-light mb-12">
+            <p className="mx-auto max-w-2xl font-sans text-lg text-white/50 font-light mb-12 relative z-10">
               Partner with KloutKrew to transform your digital presence into a premium experience that commands attention and drives conversions.
             </p>
             <button
               onClick={openModal}
-              className="group relative inline-flex overflow-hidden rounded-full bg-gold px-12 py-4 text-sm font-medium text-black transition-all hover:scale-105"
+              className="group relative inline-flex overflow-hidden rounded-full bg-gold px-12 py-4 text-sm font-medium text-black transition-all hover:scale-105 z-10"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Start Your Project <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -82,19 +94,13 @@ export const ContactModal = () => {
                     <div className="rounded-full bg-gold/10 p-3 text-gold border border-gold/20">
                       <Mail size={20} />
                     </div>
-                    <span className="text-white/80 font-light tracking-wide">hello@kloutkrew.dev</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="rounded-full bg-gold/10 p-3 text-gold border border-gold/20">
-                      <MapPin size={20} />
-                    </div>
-                    <span className="text-white/80 font-light tracking-wide">San Francisco, CA</span>
+                    <span className="text-white/80 font-light tracking-wide">aditya.anand1101@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="rounded-full bg-gold/10 p-3 text-gold border border-gold/20">
                       <Phone size={20} />
                     </div>
-                    <span className="text-white/80 font-light tracking-wide">+1 (555) 000-0000</span>
+                    <span className="text-white/80 font-light tracking-wide">+91 9990971008</span>
                   </div>
                 </div>
               </div>

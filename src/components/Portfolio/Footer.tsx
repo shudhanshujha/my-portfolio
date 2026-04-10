@@ -1,5 +1,5 @@
 "use client";
-import { Github, Twitter, Linkedin, Instagram, ArrowUpRight, Mail } from "lucide-react";
+import { Github, Twitter, Linkedin, Instagram, ArrowUpRight, Mail, Phone } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,15 +44,31 @@ export const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <div className="flex items-center gap-3 mb-8">
-              <img src="/logo.png" alt="KloutKrew Logo" className="h-10 w-auto brightness-200 contrast-125" />
-              <div className="text-2xl font-accent font-bold tracking-tighter text-white uppercase">
+            <div className="flex items-center gap-4 mb-8">
+              <img src="/logo.png" alt="KloutKrew Logo" className="h-14 w-auto brightness-200 contrast-125" />
+              <div className="text-3xl font-accent font-bold tracking-tighter text-white uppercase">
                 KLOUT<span className="text-gold">KREW</span>
               </div>
             </div>
             <p className="text-white/40 font-light leading-relaxed max-w-sm mb-10">
               KloutKrew is a premier digital collective dedicated to engineering immersive experiences for the world's most ambitious brands.
             </p>
+            
+            <div className="space-y-4 mb-10">
+              <a href="mailto:aditya.anand1101@gmail.com" className="flex items-center gap-3 text-white/60 hover:text-gold transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                  <Mail size={18} />
+                </div>
+                <span className="text-sm font-accent tracking-widest">aditya.anand1101@gmail.com</span>
+              </a>
+              <a href="tel:+919990971008" className="flex items-center gap-3 text-white/60 hover:text-gold transition-colors group">
+                <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                  <Phone size={18} />
+                </div>
+                <span className="text-sm font-accent tracking-widest">+91 9990971008</span>
+              </a>
+            </div>
+
             <div className="flex gap-5">
               {[Github, Twitter, Linkedin, Instagram].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-gold hover:border-gold transition-all duration-300">
@@ -91,7 +107,7 @@ export const Footer = () => {
             <p className="text-xs text-white/30 mb-6 leading-relaxed">
               Join our exclusive list for insights on digital luxury and technology.
             </p>
-            <form className="relative group">
+            <form className="relative group" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="Email Address" 

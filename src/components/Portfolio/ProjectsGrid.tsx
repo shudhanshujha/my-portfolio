@@ -1,56 +1,21 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ExternalLink } from "lucide-react";
 import { GlowCard, SmokeBackground } from "../ui";
 
 const projects = [
   {
-    title: "Movers & Packers",
-    description: "Annum Movers and Packers service showcase website.",
-    url: "https://annumoversandpackers.in/",
-    image: "/projects/movers.png",
-    glow: "gold" as const,
-  },
-  {
-    title: "Puma Campaign",
-    description: "High-energy Puma Hungry for More campaign page.",
-    url: "https://puma-hungry-for-more.netlify.app/",
-    image: "/projects/puma.png",
-    glow: "blue" as const,
-  },
-  {
-    title: "Ignite Dashboard",
-    description: "Modern analytics and performance monitoring UI.",
-    url: "https://ignite-gules.vercel.app/",
-    image: "/projects/ignite.png",
-    glow: "gold" as const,
-  },
-  {
-    title: "Nexus Platform",
-    description: "Advanced technology interface for modern platforms.",
-    url: "https://nexus-three-ebon.vercel.app/",
-    image: "/projects/nexus.png",
-    glow: "blue" as const,
-  },
-  {
-    title: "Farm Chronicle",
-    description: "Agricultural portal for modern farming insights.",
-    url: "https://www.farmchronicle.info/",
-    image: "/projects/farm.png",
-    glow: "gold" as const,
-  },
-  {
-    title: "Aura Design System",
-    description: "Minimalist, functional, and deeply emotive architectural design system.",
-    url: "https://aura-snowy-sigma.vercel.app/",
-    image: "/projects/aura.png",
-    glow: "gold" as const,
-  },
-  {
-    title: "Luxury Watch Clone",
+    title: "Luxury Watch Website",
     description: "Premium Franck Muller Smurfette Limited Edition Vanguard showcase.",
     url: "https://franck-muller-smurfette.netlify.app/",
     image: "/projects/watch.png",
+    glow: "gold" as const,
+  },
+  {
+    title: "Pagani Zonda R",
+    description: "A family of extreme performance cars. Digital experience for the apex predator.",
+    url: "https://starlit-faun-29fba1.netlify.app/",
+    image: "/projects/pagani.png",
     glow: "gold" as const,
   },
   {
@@ -68,11 +33,39 @@ const projects = [
     glow: "gold" as const,
   },
   {
-    title: "Pagani Zonda R",
-    description: "A family of extreme performance cars. Digital experience for the apex predator.",
-    url: "https://starlit-faun-29fba1.netlify.app/",
-    image: "/projects/pagani.png",
+    title: "Puma Campaign Website",
+    description: "High-energy Puma Hungry for More campaign page.",
+    url: "https://puma-hungry-for-more.netlify.app/",
+    image: "/projects/puma.png",
+    glow: "blue" as const,
+  },
+  {
+    title: "Aura Architecture Website",
+    description: "Minimalist, functional, and deeply emotive architectural design system.",
+    url: "https://aura-snowy-sigma.vercel.app/",
+    image: "/projects/aura.png",
     glow: "gold" as const,
+  },
+  {
+    title: "Anu Packers and Movers",
+    description: "Annum Movers and Packers service showcase website.",
+    url: "https://annumoversandpackers.in/",
+    image: "/projects/movers.png",
+    glow: "gold" as const,
+  },
+  {
+    title: "Farm Chronicle",
+    description: "Agricultural portal for modern farming insights.",
+    url: "https://www.farmchronicle.info/",
+    image: "/projects/farm.png",
+    glow: "gold" as const,
+  },
+  {
+    title: "Nexus Platform",
+    description: "Advanced technology interface for modern platforms.",
+    url: "https://nexus-three-ebon.vercel.app/",
+    image: "/projects/nexus.png",
+    glow: "blue" as const,
   },
 ];
 
@@ -131,10 +124,7 @@ export const ProjectsGrid = () => {
                     {project.description}
                   </p>
                   
-                  <div className="mt-6 flex items-center justify-between">
-                    <span className={`text-[10px] uppercase tracking-widest font-accent ${project.glow === 'gold' ? 'text-gold' : 'text-blue'}`}>
-                      {project.glow} Showcase
-                    </span>
+                  <div className="mt-6 flex items-center justify-end">
                     <a
                       href={project.url}
                       target="_blank"
