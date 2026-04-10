@@ -107,7 +107,7 @@ export const Testimonials = () => {
         
         <motion.div 
           ref={carouselRef}
-          className="flex"
+          className="flex will-change-transform"
           animate={{ x: [0, -width] }}
           transition={{ 
             repeat: Infinity, 

@@ -99,7 +99,7 @@ export const HeroIntro = () => (
       >
         <Sparkles className="h-4 w-4 text-gold" />
         <span className="text-xs font-accent font-bold uppercase tracking-[0.2em] text-gold">
-          Engineering the Extraordinary
+          Designing the Extraordinary
         </span>
       </motion.div>
       

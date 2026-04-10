@@ -33,11 +33,11 @@ export const ContactModal = () => {
             loop
             muted
             playsInline
-            className="h-full w-full object-cover opacity-30 grayscale brightness-50"
+            className="h-full w-full object-cover opacity-60 grayscale-[0.2] brightness-75"
           >
             <source src="/bg-elevate.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background" />
         </div>
         
         <div className="container mx-auto max-w-5xl text-center relative z-10">

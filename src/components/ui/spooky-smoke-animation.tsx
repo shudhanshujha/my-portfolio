@@ -203,6 +203,6 @@ export const SmokeBackground: React.FC<SmokeBackgroundProps> = ({
     }, [smokeColor]);
 
     return (
-            <canvas ref={canvasRef} className={`pointer-events-none absolute inset-0 h-full w-full opacity-50 block ${className}`} />
+            <canvas ref={canvasRef} className={`pointer-events-none absolute inset-0 h-full w-full opacity-50 block will-change-transform ${className}`} />
     );
 };
