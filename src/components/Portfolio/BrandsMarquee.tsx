@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+
 
 const BRANDS = [
   "LVMH",
@@ -16,14 +15,6 @@ const BRANDS = [
 const DUPLICATED_BRANDS = [...BRANDS, ...BRANDS, ...BRANDS];
 
 export const BrandsMarquee = () => {
-  const [width, setWidth] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      setWidth(containerRef.current.scrollWidth / 3);
-    }
-  }, []);
 
   return (
     <section className="relative w-full overflow-hidden border-y border-white/5 bg-background py-10 sm:py-16">
@@ -32,16 +23,8 @@ export const BrandsMarquee = () => {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 sm:w-40 bg-gradient-to-l from-background to-transparent" />
       
       <div className="flex w-full overflow-hidden">
-        <motion.div 
-          ref={containerRef}
-          animate={{ x: [0, -width] }}
-          transition={{ 
-            repeat: Infinity, 
-            ease: "linear", 
-            duration: 25,
-            repeatType: "loop"
-          }}
-          className="flex w-max items-center will-change-transform"
+        <div 
+          className="flex w-max items-center animate-marquee will-change-transform"
         >
           {DUPLICATED_BRANDS.map((brand, i) => (
             <div key={`${brand}-${i}`} className="flex items-center px-8 sm:px-16">
@@ -50,7 +33,7 @@ export const BrandsMarquee = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

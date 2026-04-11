@@ -107,7 +107,8 @@ export const ProjectsGrid = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-110 will-change-transform"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 flex items-center justify-center gap-4">
                      <a href={project.url} target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-primary hover:text-black transition-colors">

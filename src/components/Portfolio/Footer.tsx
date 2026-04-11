@@ -107,13 +107,15 @@ export const Footer = () => {
             <p className="text-xs text-white/30 mb-6 leading-relaxed">
               Join our exclusive list for insights on digital luxury and technology.
             </p>
-            <form className="relative group" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="w-full bg-white/[0.03] border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-xs font-accent uppercase tracking-widest text-white focus:outline-none focus:border-gold/50 transition-colors"
-              />
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-gold transition-colors" size={16} />
+            <form className="group" onSubmit={(e) => e.preventDefault()}>
+              <div className="relative">
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  className="w-full bg-white/[0.03] border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-xs font-accent uppercase tracking-widest text-white focus:outline-none focus:border-gold/50 transition-colors"
+                />
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-gold transition-colors" size={16} />
+              </div>
               <button className="mt-4 w-full bg-gold py-4 rounded-2xl text-black text-[10px] font-accent font-bold uppercase tracking-[0.2em] hover:bg-white transition-colors">
                 Subscribe
               </button>

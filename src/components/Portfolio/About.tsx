@@ -70,14 +70,14 @@ export const About = () => {
                <motion.div 
                  animate={{ y: [0, -15, 0], x: [0, 5, 0] }}
                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                 className="absolute -right-6 top-1/4 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 text-xs font-accent font-bold tracking-widest text-gold z-20"
+                 className="absolute -right-6 top-1/4 rounded-2xl bg-black/40 border border-white/10 p-6 text-xs font-accent font-bold tracking-widest text-gold z-20"
                >
                  REACT 19 + NEXT
                </motion.div>
                <motion.div 
                  animate={{ y: [0, 15, 0], x: [0, -5, 0] }}
                  transition={{ duration: 7, repeat: Infinity, delay: 1, ease: "easeInOut" }}
-                 className="absolute -left-10 bottom-1/4 rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/10 p-6 text-xs font-accent font-bold tracking-widest text-white/80 z-20"
+                 className="absolute -left-10 bottom-1/4 rounded-2xl bg-black/40 border border-white/10 p-6 text-xs font-accent font-bold tracking-widest text-white/80 z-20"
                >
                  WEBGL SHADERS
                </motion.div>
