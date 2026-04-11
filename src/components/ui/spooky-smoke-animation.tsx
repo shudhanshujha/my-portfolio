@@ -167,7 +167,7 @@ export const SmokeBackground: React.FC<SmokeBackgroundProps> = ({
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const rendererRef = useRef<Renderer | null>(null);
     const isInView = useInView(canvasRef, { once: false, margin: "0px" });
-    const animationFrameIdRef = useRef<number>();
+    const animationFrameIdRef = useRef<number | undefined>(undefined);
 
     // Effect for initialization and cleanup
     useEffect(() => {
